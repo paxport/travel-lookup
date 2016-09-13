@@ -16,7 +16,7 @@ work in progress... currently just supports IATA airport code to airport name
     <dependency>
       <groupId>com.paxport</groupId>
       <artifactId>travel-lookup</artifactId>
-      <version>0.1.0</version>
+      <version>1.0.0</version>
     </dependency>
 
 ## To Release new version to Bintray
