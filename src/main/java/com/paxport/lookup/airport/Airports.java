@@ -2,7 +2,7 @@ package com.paxport.lookup.airport;
 
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.paxport.lookup.json.JsonUtils;
+import com.paxport.lookup.json.TravelLookupJsonUtils;
 
 import java.io.InputStream;
 import java.util.List;
@@ -18,7 +18,7 @@ public class Airports {
     }
 
     public static List<AirportData> all() {
-        return JsonUtils.fromJson(jsonAirports(),new TypeReference<List<AirportData>>(){});
+        return TravelLookupJsonUtils.fromJson(jsonAirports(),new TypeReference<List<AirportData>>(){});
     }
 
     public static List<AirportData> airports() {

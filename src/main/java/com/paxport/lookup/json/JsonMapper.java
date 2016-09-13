@@ -10,7 +10,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 /**
  * Created by ajchesney on 26/05/2016.
  */
-public class JsonMapper {
+class JsonMapper {
 
     public static ObjectMapper prettyPrintMapper() {
         ObjectMapper mapper = defaultObjectMapper();

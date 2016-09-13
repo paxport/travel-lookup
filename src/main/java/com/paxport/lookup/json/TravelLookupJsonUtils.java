@@ -10,7 +10,7 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.ParameterizedType;
 import java.util.Base64;
 
-public class JsonUtils {
+public class TravelLookupJsonUtils {
 
     private final static ObjectMapper mapper = JsonMapper.prettyPrintMapper();
 
