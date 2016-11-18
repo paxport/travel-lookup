@@ -1,4 +1,4 @@
-package com.paxport.lookup.airport;
+package com.paxport.lookup.airline;
 
 
 import com.univocity.parsers.common.processor.RowListProcessor;
@@ -9,11 +9,11 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Airports {
+public class Airlines {
 
-    private final static String AIRPORTS_RESOURCE = "airports.dat";
+    private final static String AIRLINES_RESOURCE = "airlines.dat";
 
-    public static List<String[]> parse(){
+    private static List<String[]> parse(){
         // The settings object provides many configuration options
         CsvParserSettings parserSettings = new CsvParserSettings();
 
@@ -25,7 +25,7 @@ public class Airports {
 
         // You can configure the parser to use a RowProcessor to process the values of each parsed row.
         // You will find more RowProcessors in the 'com.univocity.parsers.common.processor' package, but you can also create your own.
-        parserSettings.setRowProcessor(rowProcessor);
+        parserSettings.setProcessor(rowProcessor);
 
         // Let's consider the first parsed row as the headers of each column in the file.
         parserSettings.setHeaderExtractionEnabled(true);
@@ -34,19 +34,17 @@ public class Airports {
         CsvParser parser = new CsvParser(parserSettings);
 
         // parses all rows in one go.
-        return parser.parseAll(airportsResourceAsStream());
+        return parser.parseAll(resourceAsStream());
     }
 
-    private static InputStream airportsResourceAsStream() {
-        return Airports.class.getClassLoader().getResourceAsStream(AIRPORTS_RESOURCE);
+    private static InputStream resourceAsStream() {
+        return Airlines.class.getClassLoader().getResourceAsStream(AIRLINES_RESOURCE);
     }
 
-    public static List<Airport> all(){
+    public static List<Airline> all(){
         return parse().stream()
-                .map(r -> new Airport(r))
+                .map(row -> new Airline(row))
                 .collect(Collectors.toList());
     }
-
-
 
 }

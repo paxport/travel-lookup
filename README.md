@@ -3,12 +3,17 @@ Travel Lookups
 
 Simple in memory look up service for common travel data
 
-work in progress... currently just supports IATA airport code to airport name
+Supports:
+
+* IATA airport code to airport
+* IATA carrier code to carrier name
+
+Data files taken from https://github.com/jpatokal/openflights
 
 ## Look up airport name
 
-    String name = IataAirportCodes.airportName("BRS");
-    assertEquals("Bristol International Airport", name);
+    String name = IataAirportCodes.airportName("BRS").get();
+    assertEquals("Bristol", name);
     
   
 ## JCenter Dependency
