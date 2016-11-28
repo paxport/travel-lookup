@@ -1,6 +1,8 @@
 Travel Lookups
 ===================
 
+<a href="https://travis-ci.org/paxport/travel-lookup" target="_blank"><img src="https://api.travis-ci.org/paxport/travel-lookup.svg?branch=master"/></a>
+
 Simple in memory look up service for common travel data
 
 Supports:
